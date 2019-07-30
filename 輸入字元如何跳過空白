@@ -1,0 +1,47 @@
+題目需要輸入 (數字 數字 字元)
+輸入字元時，會讀到空白，但我們只需要字元。
+所以使用do while迴圈
+
+小筆記------------------------------------------
+
+do{
+    scanf("%c", &n);//輸入字元
+    
+} while( n == ' ' )//如果字元是空白就跳過
+
+
+例題------------------------------------------
+
+
+e.g.
+    輸入: 2 4 N
+    輸出:
+          NNNN
+          NNNN
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a, b;
+    char n;
+    scanf("%d%d", &a, &b);
+    do{
+        scanf("%c", &n);
+    }while(n == ' ');
+    square(a,b,n);
+
+    return 0;
+}
+
+void square(int a, int b, char n)
+{
+    for(int i = 0; i < a; i++){
+        for(int j = 0; j < b; j++){
+            printf("%c", n);
+        }
+        printf("\n");
+    }
+}
